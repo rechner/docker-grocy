@@ -23,12 +23,12 @@ RUN \
  echo "**** install grocy ****" && \
  mkdir -p /app/grocy && \
  if [ -z ${GROCY_RELEASE+x} ]; then \
-	GROCY_RELEASE=$(curl -sX GET "https://api.github.com/repos/grocy/grocy/releases/latest" \
+	GROCY_RELEASE=$(curl -sX GET "https://api.github.com/repos/rechner/grocy/releases/latest" \
 	| awk '/tag_name/{print $4;exit}' FS='[""]'); \
  fi && \
  curl -o \
 	/tmp/grocy.tar.gz -L \
-	"https://github.com/grocy/grocy/archive/${GROCY_RELEASE}.tar.gz" && \
+	"https://github.com/rechner/grocy/archive/${GROCY_RELEASE}.tar.gz" && \
  tar xf \
 	/tmp/grocy.tar.gz -C \
 	/app/grocy/ --strip-components=1 && \
